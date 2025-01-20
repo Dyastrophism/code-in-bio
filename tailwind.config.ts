@@ -1,6 +1,6 @@
 import type { Config } from "tailwindcss";
 
-export default {
+const config: Config ={
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -25,10 +25,11 @@ export default {
         "accent-blue-dark": "#102831",
         "accent-green-dark": "#222D26",
         "accent-pink-dark": "#2C1A22",
-        "accent-yellow-dark": "#282A0F"
- 
+        "accent-yellow-dark": "#282A0F",
       },
     },
   },
   plugins: [],
 } satisfies Config;
+
+export default config;
