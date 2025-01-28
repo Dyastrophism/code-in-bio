@@ -1,10 +1,24 @@
 import "server-only";
 import { db } from "../lib/firebase";
+import { Link } from "../actions/add-custom-links";
 
 export type ProfileData = {
     userId: string;
+    name?: string;
+    description?: string;
+    imagePath?: string;
     totalVisits: number;
     createdAt: number;
+    socialMedias?: {
+        github: string;
+        linkedin: string;
+        instagram: string;
+        twitter: string;
+    };
+    link1?: Link;
+    link2?: Link;
+    link3?: Link;
+    updatedAt?: number;
 };
 
 export type ProjectData = {

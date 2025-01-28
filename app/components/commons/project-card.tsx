@@ -1,5 +1,6 @@
 "use client";
 
+import { formatUrl } from "@/app/lib/utils";
 import { ProjectData } from "@/app/server/get-profile-data";
 import Link from "next/link";
 
@@ -13,11 +14,11 @@ export default function ProjectCard({
     img: string;
 }) {
 
-    const projectUrl = project.projectUrl
-    const formattedUrl = projectUrl.startsWith("http") ? projectUrl : `https://${projectUrl}`
+    const formattedUrl = formatUrl(project?.projectUrl || "");
+    
 
     function handleClick() {
-        //TODO: Implementar lógica de contagem de visitas
+        console.log("Clicou no card");
     }
 
     return(
@@ -33,13 +34,13 @@ export default function ProjectCard({
                 <div className="flex flex-col gap-2">
                     {isOwner && (
                         <span className="uppercase text-xs font-bold text-accent-green">
-                            {project.totalVisits || 0} acessos
+                            {project?.totalVisits || 0} acessos
                         </span>
                     )}
                     
                     <div className="flex flex-col ">
-                        <span className="text-white font-bold text-xl">{project.projectName}</span>
-                        <span className="text-content-body text-sm">{project.projectDescription}</span>
+                        <span className="text-white font-bold text-xl">{project?.projectName}</span>
+                        <span className="text-content-body text-sm">{project?.projectDescription}</span>
                     </div>
                 </div>
             </div>
