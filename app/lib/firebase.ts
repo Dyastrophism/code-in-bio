@@ -3,7 +3,7 @@ import { getFirestore } from "firebase-admin/firestore";
 import { getStorage } from "firebase-admin/storage";
 import "server-only";
 
-const decodedKey = Buffer.from(process.env.FIREBASE_PRIVATE_KEY!, "base64").toString("utf-8");
+const decodedKey = Buffer.from(process.env.FIREBASE_PRIVATE_KEY_BASE64!, "base64").toString("utf-8");
 
 export const firebaseCert = cert({
     projectId: process.env.FIREBASE_PROJECT_ID,
@@ -21,3 +21,16 @@ if (!getApps().length) {
 export const db = getFirestore();
 
 export const storage = getStorage().bucket();
+
+export async function getDownloadURLFromPath(path?: string) {
+    if (!path) return null;
+
+    const file = storage.file(path);
+
+    const [url] = await file.getSignedUrl({
+        action: "read",
+        expires: "03-09-2491"
+    });
+
+    return url;
+}

@@ -1,7 +1,6 @@
 import Header from "@/app/components/landing-page/header";
-import Button from "@/app/components/ui/button";
-import TextInput from "@/app/components/ui/text-input";
 import { Rocket } from "lucide-react";
+import CreateLinkForm from "./create-link-form";
 
 export default function CreatePage() {
     return <div>
@@ -11,17 +10,7 @@ export default function CreatePage() {
                 <h1 className="text-4xl font-bold text-white">Escolha seu link</h1>
                 <Rocket className="size-10"/>
             </div>
-            <form 
-                action=""
-                className="w-full flex items-center gap-2"
-            >
-                <span className="text-white">coideinbio.com/</span>
-                <TextInput />
-                <Button className="w-[126px]">Criar</Button>
-            </form>
-            <div className="">
-                <span>Erro de exemplo</span>
-            </div>
+            <CreateLinkForm />
         </div>
     </div>
 }
