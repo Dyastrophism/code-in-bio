@@ -2,6 +2,7 @@ import ProjectCard from "../commons/project-card";
 import TotalVisits from "../commons/total-visits";
 import UserCard from "../commons/user-card/user-card";
 import Button from "../ui/button";
+import CreateNow from "../ui/create-now";
 import TextInput from "../ui/text-input";
 
 export default function Hero() {
@@ -16,11 +17,7 @@ export default function Hero() {
                     <br />
                     Acompanhe o engajamento com Analytics de cliques
                 </h2>
-                <div className="flex items-center gap-2 w-full mt-[10vh]">
-                    <span className="text-white text-xl">codeinbio.com/</span>
-                    <TextInput placeholder="Seu link"/>
-                    <Button>Criar agora</Button>
-                </div>
+                <CreateNow />
             </div>
             <div className="w-full flex items-center justify-center bg-[radial-gradient(circle_at_50%_50%,#4B2DBB,transparent_55%)]">
                 <div className="relative">
@@ -28,13 +25,13 @@ export default function Hero() {
                     <UserCard />
 
                     <div className="absolute -bottom-[7%] -right-[45%]">
-                        <TotalVisits />
+                        <TotalVisits totalVisits={3456}/>
                     </div>
                     <div className="absolute top-[20%] -left-[45%] -z-10">
-                        <ProjectCard />
+                        <ProjectCard name="Petshop" description="Consiga tudo que seu pet precisa em alguns cliques" img="./project1.jpg" />
                     </div>
                     <div className="absolute -top-[5%] -left-[55%] -z-10">
-                        <ProjectCard />
+                        <ProjectCard name="SaaS" description="Praticidade aonde quer que você esteja" img="./project2.jpg"/>
                     </div>
                 </div>
             </div>

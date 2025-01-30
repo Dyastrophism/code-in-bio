@@ -7,7 +7,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function sanitizeLink(link?: string) {
-    if (!link) return '';
+    if (!link) return "";
     return link
     .replace(/\s/g, "")
     .replace(/[!@#$%^&*()_+\-=\[\]{};':"\\|,ˆ.<>\/?]+/, "")
