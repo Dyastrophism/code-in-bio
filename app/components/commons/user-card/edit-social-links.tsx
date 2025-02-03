@@ -12,10 +12,10 @@ export default function EditSocialLinks({
     socialMedias,
 } : {
     socialMedias?: {
-        github?: string;
-        linkedin?: string;
-        instagram?: string;
-        twitter?: string;
+        github: string;
+        linkedin: string;
+        instagram: string;
+        twitter: string;
     }
 }) {
 

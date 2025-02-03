@@ -102,10 +102,10 @@ export default function NewProject({ profileId }: { profileId: string }) {
                                 </label>
                                 <TextArea
                                     id="project-description" 
-                                    placeholder="Descrição do projeto" 
+                                    placeholder="Dê uma breve descrição do projeto" 
                                     className="h-36" 
                                     value={projectDescription} 
-                                    onChange={(e) => setProjectDescription}
+                                    onChange={(e) => setProjectDescription(e.target.value)}
                                 />
                             </div>
                             <div className="flex flex-col gap-1">
