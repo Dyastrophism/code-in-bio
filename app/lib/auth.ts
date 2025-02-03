@@ -33,7 +33,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
             await db.collection("users").doc(user.id).update({
                 createdAt: Timestamp.now().toMillis(),
             })
-        }
+        },
     },
     callbacks: {
         session({

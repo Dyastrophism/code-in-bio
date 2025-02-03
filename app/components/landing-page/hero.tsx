@@ -1,9 +1,7 @@
 import ProjectCard from "../commons/project-card";
-import TotalVisits from "../commons/total-visits";
+import { TotalVisits } from "../commons/total-visits";
 import UserCard from "../commons/user-card/user-card";
-import Button from "../ui/button";
 import CreateNow from "../ui/create-now";
-import TextInput from "../ui/text-input";
 
 export default function Hero() {
     return(
@@ -25,7 +23,7 @@ export default function Hero() {
                     <UserCard />
 
                     <div className="absolute -bottom-[7%] -right-[45%]">
-                        <TotalVisits totalVisits={3456}/>
+                        <TotalVisits totalVisits={3456} />
                     </div>
                     <div className="absolute top-[20%] -left-[45%] -z-10">
                         <ProjectCard name="Petshop" description="Consiga tudo que seu pet precisa em alguns cliques" img="./project1.jpg" />

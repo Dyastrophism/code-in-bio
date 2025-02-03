@@ -38,7 +38,7 @@ export async function POST(req: Request) {
 
         customerId = newCustomer.id;
 
-        await userRef.update({ customerId})
+        await userRef.update({ customerId});
     }
 
     const session = await stripe.checkout.sessions.create({
